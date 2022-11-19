@@ -157,6 +157,19 @@ ul{
   border-radius: 4pt;
 }
 
+.cartItem{
+  display: inline-block;
+  width: 250pt;
+  height: 300pt;
+  outline-style: solid;
+  padding: 15pt;
+  text-align: center;
+  margin: 8pt;
+
+  outline-color: #d6d6d6;
+  border-radius: 4pt;
+}
+
 .itemImage{
   width: 200pt;
   height: 200pt
@@ -196,6 +209,19 @@ ul{
     display: inline-block;
     width: 70vw;
     height: 70vw;
+    outline-style: solid;
+    padding: 15pt;
+    text-align: center;
+    margin: 8pt;
+  
+    outline-color: #d6d6d6;
+    border-radius: 4pt;
+  }
+
+  .cartItem{
+    display: inline-block;
+    width: 70vw;
+    height: 80vw;
     outline-style: solid;
     padding: 15pt;
     text-align: center;

@@ -8,11 +8,11 @@ function addToCart(productID){
             return;
 
             //very good for debugging
-            debug.innerHTML = this.responseText;
+            //debug.innerHTML = this.responseText;
 
         const parsed = JSON.parse(this.responseText);
 
-        // generateTable(parsed);
+        generateCartTable(parsed);
     }
 
     xhr.open("GET", `Server/addToCart.php?addToCart=` + productID);
@@ -27,46 +27,46 @@ function removeFromCart(productID)
             return;
 
             //very good for debugging
-            debug.innerHTML = this.responseText;
+            //debug.innerHTML = this.responseText;
 
         const parsed = JSON.parse(this.responseText);
 
-        //generateTable(parsed);
+        generateCartTable(parsed);
     }
 
-    xhr.open("GET", `Server/addToCart.php?removeFromCart=` + productID);
+    xhr.open("GET", `Server/removeFromCart.php?removeFromCart=` + productID);
     xhr.send();
 }
 
-// function generateTable(productObjects){
-//     let combinedString = "";
+function generateCartTable(productObjects){
+    let combinedString = "";
 
-//     for(let i = 0;i < productObjects.length; i++)
-//     {
-//         let amount = productObjects[i].amount;
-//         let product = productObjects[i].product;
+    for(let i = 0;i < productObjects.length; i++)
+    {
+        let amount = productObjects[i].amount;
+        let product = productObjects[i].product;
 
-//         combinedString += `<div class='item'>
-//                         <div class='itemImage'>
-//                             <img src='${product.image}' alt='${product.itemName}'>
-//                         </div>
-//                         <div>
-//                             <span>${amount}</span>
-//                         </div>
-//                         <div class='itemPrice'>
-//                             <span>$${product.price}</span>
-//                         </div>
-//                         <div class='itemTitle'>
-//                             <span>${product.itemName}</span>
-//                         </div>
-//                         <div class='itemAddButton'>
-//                             <span><button type='button' onclick='addToCart(${product.productID})'>Add</button></span>
-//                         </div>
-//                         <div class='itemRemoveButton'>
-//                             <span><button type='button' onclick='removeFromCart(${product.productID})'>Add</button></span>
-//                         </div>
-//                     </div>`;
-//     }
+        combinedString += `<div class='cartItem'>
+                        <div class='itemImage'>
+                            <img src='${product.image}' alt='${product.itemName}'>
+                        </div>
+                        <div>
+                            <span>${amount}</span>
+                        </div>
+                        <div class='itemPrice'>
+                            <span>$${product.price}</span>
+                        </div>
+                        <div class='itemTitle'>
+                            <span>${product.itemName}</span>
+                        </div>
+                        <div class='itemAddButton'>
+                            <span><button type='button' onclick='addToCart(${product.productID})'>Add</button></span>
+                        </div>
+                        <div class='itemRemoveButton'>
+                            <span><button type='button' onclick='removeFromCart(${product.productID})'>Remove</button></span>
+                        </div>
+                    </div>`;
+    }
 
-//     cartContainer.innerHTML = combinedString;
-// }
+    cartContainer.innerHTML = combinedString;
+}

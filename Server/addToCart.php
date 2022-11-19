@@ -64,5 +64,11 @@
     
     setcookie($cookie_name, json_encode($cookie_value), time() + (86400 * 1)); // cookie lasts for 1 day
 
-    echo json_encode($cookie_value);
+    $toArray = array();
+    foreach($cookie_value as $value)
+    {
+        $toArray[] = $value;
+    }
+
+    echo json_encode($toArray);
 ?>
