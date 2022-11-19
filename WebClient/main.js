@@ -12,7 +12,7 @@ $(() => {
   // click event handler:
   // 1) prevent loading of the new url
   // 2) may trigger hashchange event
-  $('nav a').click(function (e) {
+  $('nav a').click((e) => {
     e.preventDefault()
     let newPage = $(this).attr('href')
     window.location.hash = newPage
@@ -21,7 +21,7 @@ $(() => {
   // hashchange event handler:
   // convert the hash to one of the three
   // page names and render the page
-  $(window).on('hashchange', function () {
+  $(window).on('hashchange', () => {
     let newPage = getPage(window.location.hash)
     render(newPage)
   })
