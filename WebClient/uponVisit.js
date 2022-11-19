@@ -7,3 +7,4 @@ xhr.onreadystatechange = function(){
 
 xhr.open("GET", `Server/uponVisit.php`);
 xhr.send();
+
