@@ -170,7 +170,7 @@ ul{
   border-radius: 4pt;
 }
 
-.itemImage{
+.itemImage > img{
   width: 200pt;
   height: 200pt
 }
@@ -231,7 +231,7 @@ ul{
     border-radius: 4pt;
   }
   
-  .itemImage{
+  .itemImage > img{
     width: 50vw;
     height: 50vw;
   }
