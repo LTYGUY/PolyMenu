@@ -37,6 +37,27 @@ function clearCart()
         xhr.send();
 }
 
+function submitCart(){
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+            if (this.readyState != 4 || this.status != 200)
+                return;
+    
+            const parsed = this.responseText;
+            if (parsed == `success`)
+            {
+                clearCart();
+            }
+            else
+            {
+                debug.innerHTML = `${parsed} failed to submit cart`;
+            }
+        }
+    
+    xhr.open("GET", `Server/submitCart.php`);
+    xhr.send();
+}
+
 function addToCart(productID){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){

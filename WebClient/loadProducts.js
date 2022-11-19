@@ -1,12 +1,8 @@
 const displayproducts = document.getElementById("displayproducts");
 const searchBar = document.getElementById("searchBar");
-const searchButton = document.getElementById("searchButton");
 let previousCategory = "";
 
-searchButton.addEventListener("click", function(event){
-    event.preventDefault();
-    getProducts();
-});
+
 
 getProducts('Main');
 

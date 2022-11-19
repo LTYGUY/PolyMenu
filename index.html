@@ -76,7 +76,17 @@
 
         </article>
         <article id="login" hidden="hidden">
-          <h1>login</h1>
+          <form>
+            <div>
+              <label for="username">Username</label><br/>
+              <input class="username" type="text" id="username" name="username">           
+            </div>
+            <div>
+              <label for="password">Password</label><br/>
+              <input class="password" type="text" id="password" name="password">
+            </div>
+            <input class="submitLogin" type="submit" id="submitLogin" value="Login">
+          </form>
 
         </article>
         <article id="cart" hidden="hidden">
@@ -85,6 +95,7 @@
           </div>
           <div>
             <button type="button" onclick="clearCart()">Clear Cart</button>
+            <button type="button" onclick="submitCart()">Submit Order</button>
           </div>
         </article>
     </div>
@@ -92,6 +103,5 @@
     <script src="WebClient/uponVisit.js"></script>
     <script src="WebClient/main.js"></script>
     <script src="WebClient/loadProducts.js"></script>
-    <script src="WebClient/addToCart.js"></script>
 </body>
 </html>
