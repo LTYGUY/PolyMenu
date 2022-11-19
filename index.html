@@ -5,105 +5,88 @@
   <head>
     <title>Index</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="WebClient\jquery.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div id="main">
-        <nav> 
-            <a href="page1" class="homepage">PolyMenu</a>
-            <a href="page2">About Us</a>
-            <a href="page3">Help</a>
-            <a href="login">Login</a>
-            <a href="cart" id="menuCartNav">Cart</a>
-        </nav>
-        <span id="debug"></span>
-        <article id="page1">
-          <div class="menucategory" id="menucategory">
-            <button type="button" onclick="getProducts('All')">All</button>
-            <button type="button" onclick="getProducts('Main')">Main</button>
-            <button type="button" onclick="getProducts('Appetizer')">Appetizer</button>
-            <button type="button" onclick="getProducts('Side')">Side</button>
-            <button type="button" onclick="getProducts('Drink')">Drink</button>
-            <button type="button" onclick="getProducts('Dessert')">Dessert</button>
-          </div>
-          <form>
-            <label for="searchBar">Search:</label>
-            <input class="searchBar" type="text" id="searchBar" name="searchBar">
-            <input class="searchButton" type="submit" id="searchButton" value="Search">
-          </form>
-          <div id="displayproducts" class="itemProductsContainer">
-
-          </div>
-        </article>
-        <article id="page2" hidden="hidden">
-          <h3>
-            Introduction
-          </h3>
-            <p>
-              Polymenu was established in 1990, and we have over 12 restaurants in Singapore.  
-              We serve everything, from ice creams to steaks. We want more people to experience our huge variety of flavourful foods. 
-              Try and have a taste, we promise it will be worth every cent!
-            </p>
-          <h4>
-            Our Chefs' Experience
-          </h4>
-          <p>
-            We send our chefs around the world, to have them taste all kinds of foods, for them to cook the best dishes for you!
-          </p>
-          <h4>
-            Our duty
-          </h4>
-          <p>
-            We strongly believe that people must eat good food to live a better life, 
-            make correct life choices, and be happier in general. 
-            Our food will remove any clouds in your mind, and so, 
-            it is our duty to make sure our food is delivered into your stomach.
-          </p>
-          <h4>
-            Awards and Certifications
-          </h4>
-          <p>
-            <ul>
-              <li>Michelin star, 1-star, 1995  - Present</li>
-              <li>Gold award in Food Service, 1990 - Present</li>
-              <li>Master-of-all cuisines, 2001 - Present</li>
-              <li>Excellence in Cleanliness & Food Hygiene A, 1997 - Present</li>
-            </ul>
-          </p>
-        </article>
-        <article id="page3" hidden="hidden">
-
-        </article>
-        <article id="login" hidden="hidden">
-          <form>
-            <div>
-              <label for="username">Username</label><br/>
-              <input class="username" type="text" id="username" name="username">           
-            </div>
-            <div>
-              <label for="password">Password</label><br/>
-              <input class="password" type="text" id="password" name="password">
-            </div>
-            <input class="submitLogin" type="submit" id="submitLogin" value="Login">
-          </form>
-
-        </article>
-        <article id="cart" hidden="hidden">
-          <div id="cartContainer">
-
+      <nav>
+        <a href="page1" class="homepage">PolyMenu</a>
+        <a href="page2">About Us</a>
+        <a href="page3">Help</a>
+        <a href="login">Login</a>
+        <a href="cart" id="menuCartNav">Cart</a>
+      </nav>
+      <span id="debug"></span>
+      <article id="page1">
+        <div class="menucategory" id="menucategory">
+          <button type="button" onclick="getProducts('All')">All</button>
+          <button type="button" onclick="getProducts('Main')">Main</button>
+          <button type="button" onclick="getProducts('Appetizer')">Appetizer</button>
+          <button type="button" onclick="getProducts('Side')">Side</button>
+          <button type="button" onclick="getProducts('Drink')">Drink</button>
+          <button type="button" onclick="getProducts('Dessert')">Dessert</button>
+        </div>
+        <form>
+          <label for="searchBar">Search:</label>
+          <input class="searchBar" type="text" id="searchBar" name="searchBar" />
+          <input class="searchButton" type="submit" id="searchButton" value="Search" />
+        </form>
+        <div id="displayproducts" class="itemProductsContainer"></div>
+      </article>
+      <article id="page2" hidden="hidden">
+        <h3>Introduction</h3>
+        <p>
+          Polymenu was established in 1990, and we have over 12 restaurants in Singapore. We serve everything, from ice
+          creams to steaks. We want more people to experience our huge variety of flavourful foods. Try and have a
+          taste, we promise it will be worth every cent!
+        </p>
+        <h4>Our Chefs' Experience</h4>
+        <p>
+          We send our chefs around the world, to have them taste all kinds of foods, for them to cook the best dishes
+          for you!
+        </p>
+        <h4>Our duty</h4>
+        <p>
+          We strongly believe that people must eat good food to live a better life, make correct life choices, and be
+          happier in general. Our food will remove any clouds in your mind, and so, it is our duty to make sure our food
+          is delivered into your stomach.
+        </p>
+        <h4>Awards and Certifications</h4>
+        <ul>
+          <li>Michelin star, 1-star, 1995 - Present</li>
+          <li>Gold award in Food Service, 1990 - Present</li>
+          <li>Master-of-all cuisines, 2001 - Present</li>
+          <li>Excellence in Cleanliness & Food Hygiene A, 1997 - Present</li>
+        </ul>
+      </article>
+      <article id="page3" hidden="hidden"></article>
+      <article id="login" hidden="hidden">
+        <form>
+          <div>
+            <label for="username">Username</label><br />
+            <input class="username" type="text" id="username" name="username" />
           </div>
           <div>
-            <p id="submitOrderStatus"></p>
-            <button type="button" onclick="clearCart()">Clear Cart</button>
-            <button type="button" onclick="submitCart()">Submit Order</button>
+            <label for="password">Password</label><br />
+            <input class="password" type="text" id="password" name="password" />
           </div>
-        </article>
+          <input class="submitLogin" type="submit" id="submitLogin" value="Login" />
+        </form>
+      </article>
+      <article id="cart" hidden="hidden">
+        <div id="cartContainer"></div>
+        <div>
+          <p id="submitOrderStatus"></p>
+          <button type="button" onclick="clearCart()">Clear Cart</button>
+          <button type="button" onclick="submitCart()">Submit Order</button>
+        </div>
+      </article>
     </div>
     <script src="WebClient/getUsers.js"></script>
     <script src="WebClient/addToCart.js"></script>
     <script src="WebClient/uponVisit.js"></script>
     <script src="WebClient/main.js"></script>
     <script src="WebClient/loadProducts.js"></script>
-</body>
+  </body>
 </html>
