@@ -1,48 +1,40 @@
-const displayproducts = document.getElementById("displayproducts");
-const searchBar = document.getElementById("searchBar");
-let previousCategory = "";
+const displayproducts = document.getElementById('displayproducts')
+const searchBar = document.getElementById('searchBar')
+let previousCategory = ''
 
+getProducts('Main')
 
+function getProducts(category) {
+  let xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = () => {
+    if (this.readyState != 4 || this.status != 200) return
 
-getProducts('Main');
+    //very good for debugging
+    displayproducts.innerHTML = this.responseText
 
-function getProducts(category){
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if (this.readyState != 4 || this.status != 200)
-            return;
+    const parsed = JSON.parse(this.responseText)
 
-            //very good for debugging
-            displayproducts.innerHTML = this.responseText;
+    generateTable(parsed)
+  }
 
-        const parsed = JSON.parse(this.responseText);
+  if (category != null) previousCategory = category
+  else category = previousCategory
 
-        generateTable(parsed);
-    }
+  let finalString = category
 
-    if (category != null)
-        previousCategory = category;
-    else
-        category = previousCategory;
+  if (searchBar.value != null) finalString += ` ${searchBar.value}`
 
-        
-    let finalString = category;
-
-    if (searchBar.value != null)
-        finalString += ` ${searchBar.value}`;
-
-    xhr.open("GET", `Server/loadProducts.php?getproducts=` + finalString);
-    xhr.send();
+  xhr.open('GET', `Server/loadProducts.php?getproducts=` + finalString)
+  xhr.send()
 }
 
-function generateTable(productObjects){
-    let combinedString = "";
+function generateTable(productObjects) {
+  let combinedString = ''
 
-    for(let i = 0;i < productObjects.length; i++)
-    {
-        let product = productObjects[i];
+  for (let i = 0; i < productObjects.length; i++) {
+    let product = productObjects[i]
 
-        combinedString += `<div class='item'>
+    combinedString += `<div class='item'>
                         <div class='itemImage'>
                             <img src='${product.image}' alt='${product.itemName}'>
                         </div>
@@ -55,14 +47,12 @@ function generateTable(productObjects){
                         <div class='itemAddButton'>
                             <span><button type='button' onclick='addToCart(${product.productID})'>Add to cart</button></span>
                         </div>
-                    </div>`;
-    }
+                    </div>`
+  }
 
-    displayproducts.innerHTML = combinedString;
+  displayproducts.innerHTML = combinedString
 
-    afterGeneratingTable();
+  afterGeneratingTable()
 }
 
-function afterGeneratingTable(){
-
-}
+function afterGeneratingTable() {}
