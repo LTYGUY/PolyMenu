@@ -1,6 +1,7 @@
 const debug = document.getElementById("debug");
 const cartContainer = document.getElementById("cartContainer");
 const menuCartBtn = document.getElementById("menuCartNav");
+const submitOrderStatus = document.getElementById("submitOrderStatus");
 
 getCart();
 
@@ -43,14 +44,17 @@ function submitCart(){
             if (this.readyState != 4 || this.status != 200)
                 return;
     
+                //debug.innerHTML = this.responseText;
             const parsed = this.responseText;
             if (parsed == `success`)
             {
                 clearCart();
+                
+                submitOrderStatus.innerHTML = "Order Successfully submitted!";
             }
             else
             {
-                debug.innerHTML = `${parsed} failed to submit cart`;
+                submitOrderStatus.innerHTML = parsed;
             }
         }
     
@@ -96,6 +100,9 @@ function removeFromCart(productID)
 }
 
 function generateCartTable(productObjects){
+    // if (submitOrderStatus != "")
+    //     submitOrderStatus.innerHTML = "";
+
     let combinedString = "";
     let totalItems = 0;
 

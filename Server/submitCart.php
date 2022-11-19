@@ -17,28 +17,40 @@
 
     //Please include the real values here thanks
     $userId = 1;
-    $timeFormat = (date("jS F Y h:ia"));
+    $timeFormat = (date("Y-m-d H:i:s"));
     $query = "";
+    $firstQuery = 0;
 
     foreach($cookie_value as $cartItem)
     {
-        for ($i = 0; $i < $cartItem->amount; $i)
+        $product = $cartItem['product'];
+        $productID = $product['productID'];
+        $amount = $cartItem['amount'];
+        for ($i = 0; $i < $amount; $i++)
         {
-            $query .= "INSERT INTO Record VALUES ($cartItem->product['productID'],'$userId','$timeFormat');";
+            if ($firstQuery == 0)
+            {
+                $firstQuery++;
+                $query .= "INSERT INTO Record VALUES (null,$productID,$userId,'$timeFormat')";
+                continue;
+            }
+            $query .= ",(null,$productID,$userId,'$timeFormat')";
+            $result = mysqli_query($dbc, $query);
         }
     }
 
-    $result = mysqli_query($dbc, $query);
-            
-    if (!$result) {
-        printf("The query failed\n");
-        printf("Error message: %s",
-        $mysqli->error);
-        echo 'fail';
+    if ($query == "")
+    {
+        echo 'No orders!';
         return;
     }
 
-    $nr = mysqli_num_rows($result);
+    if (!$result) {
+        printf("The query failed\n");
+        printf("Error message: %s", $mysqli->error);
+        echo 'Order failed!';
+        return;
+    }
 
     echo 'success';
 ?>
