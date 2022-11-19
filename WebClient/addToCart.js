@@ -22,6 +22,21 @@ function getCart(){
         xhr.send();
 }
 
+function clearCart()
+{
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+            if (this.readyState != 4 || this.status != 200)
+                return;
+    
+            const parsed = [];
+            generateCartTable(parsed);
+        }
+    
+        xhr.open("GET", `Server/clearCart.php`);
+        xhr.send();
+}
+
 function addToCart(productID){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
