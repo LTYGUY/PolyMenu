@@ -5,6 +5,7 @@
   <head>
     <title>Index</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="WebClient\jquery.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -14,7 +15,7 @@
             <a href="page1" class="homepage">PolyMenu</a>
             <a href="page2">About Us</a>
             <a href="page3">Help</a>
-            <a href="login">Login</a>
+            <a href="login" id="auth">Login</a>
             <a href="cart" id="menuCartNav">Cart</a>
         </nav>
         <span id="debug"></span>
@@ -76,17 +77,85 @@
 
         </article>
         <article id="login" hidden="hidden">
-          <form>
+
+        <div id="userPage">
+        </div>
+        <div class="editForm-popup" id="editForm">
+          <form class="editForm-container">
+            <h1>Edit Profile</h1>
             <div>
-              <label for="username">Username</label><br/>
-              <input class="username" type="text" id="username" name="username">           
+              <div id="edit_error_msg"></div>
             </div>
-            <div>
-              <label for="password">Password</label><br/>
-              <input class="password" type="text" id="password" name="password">
-            </div>
-            <input class="submitLogin" type="submit" id="submitLogin" value="Login">
+            <label for="edit_name"><b>Name</b></label>
+            <input type="text" name="edit_name" id="edit_name" placeholder="Enter your name"/>
+
+            <label for="edit_email"><b>Email</b></label>
+            <input type="text" name="edit_email" id="edit_email" placeholder="Enter your email"/>
+
+            <label for="edit_phone"><b>Phone</b></label>
+            <input type="text" name="edit_phone" id="edit_phone" placeholder="Enter your phone"/>
+
+            <label for="edit_address"><b>Address</b></label>
+            <input type="text" name="edit_address" id="edit_address" placeholder="Enter your address"/>
+
+            <button type="submit" id="btn_edit" class="userEditConfirm">Confirm</button>
+            <button type='button' onclick='userEditCancel()' class="userEditCancel">Cancel</button>
+
           </form>
+        </div>
+        <div class="loginForm-popup" id="loginForm">
+          <form class="loginForm-container">
+            <h1>Login</h1>
+        
+            <div id="login_error_msg"></div>
+            <label for="login_username">Username</label><br/>
+            <input class="username" type="text" id="login_username" name="login_username" placeholder="Enter Username">  
+
+            <label for="login_password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="login_password" class="password"  id="login_password" autocomplete="false">
+        
+            <button type="submit" id="btn_login" class="btn">Login</button>
+            <div class="container signup">
+              <p>Don't have an account? <a href="javascript:void(0)" class="signup">Sign up</a>.</p>
+            </div>
+          </form>
+        </div>
+        
+
+        <div class="registerForm-popup" id="registerForm">
+          <form class="registerForm-container">
+            <h1>Register</h1>
+            <div>
+              <div id="register_error_msg"></div>
+            </div>
+            <label for="register_username">Username</label><br/>
+            <input class="username" type="text" id="register_username" name="register_username" placeholder="Enter Username" >  
+
+            <label for="register_password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="register_password" class="password"  id="register_password" autocomplete="false">
+        
+            <label for="confirm_password"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" autocomplete="false">
+
+            <label for="register_name"><b>Name</b></label>
+            <input type="text" name="register_name" id="register_name" placeholder="Enter your name"/>
+
+            <label for="register_email"><b>Email</b></label>
+            <input type="text" name="register_email" id="register_email" placeholder="Enter your email"/>
+
+            <label for="register_phone"><b>Phone</b></label>
+            <input type="text" name="register_phone" id="register_phone" placeholder="Enter your phone"/>
+
+            <label for="register_address"><b>Address</b></label>
+            <input type="text" name="register_address" id="register_address" placeholder="Enter your address"/>
+
+            <button type="submit" id="btn_register" class="btn">Register</button>
+
+            <div class="container signin">
+              <p>Already have an account? <a href="javascript:void(0)">Sign in</a>.</p>
+            </div>
+          </form>
+        </div>
 
         </article>
         <article id="cart" hidden="hidden">
@@ -105,5 +174,9 @@
     <script src="WebClient/uponVisit.js"></script>
     <script src="WebClient/main.js"></script>
     <script src="WebClient/loadProducts.js"></script>
+    <script src="WebClient/editUser.js"></script>
+    <script src="WebClient/Auth/register.js"></script>
+    <script src="WebClient/Auth/login.js"></script>
+    <script src="WebClient/Auth/signout.js"></script>
 </body>
 </html>
