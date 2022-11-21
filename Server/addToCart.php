@@ -44,7 +44,7 @@
       $obj->category = $row->category;
       $obj->itemCode = $row->itemCode;
       $obj->price = $row->price;
-      $obj->image = $row->img;
+      $obj->image = $row->image;
       $obj->calories = $row->calories;
       $obj->remark = $row->remark;
 
@@ -69,6 +69,9 @@
     {
         $toArray[] = $value;
     }
+
+    mysqli_free_result ($result);
+    mysqli_close($dbc);
 
     echo json_encode($toArray);
 ?>

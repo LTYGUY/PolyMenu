@@ -16,10 +16,17 @@
     include 'connectToDatabase.php';
 
     //Please include the real values here thanks
-    $userId = 1;
+    session_start();
+    $userId = $_SESSION['userId'];
     $timeFormat = (date("Y-m-d H:i:s"));
     $query = "";
     $firstQuery = 0;
+
+    if($userId == '')
+    {
+        echo 'Plase sign in to make order.';
+        return;
+    }
 
     foreach($cookie_value as $cartItem)
     {
