@@ -8,22 +8,22 @@ html {
   color: var(--maintextcolor);
 }
 
-ul{
-  font-size:12pt;
+ul {
+  font-size: 12pt;
 }
 
-button{
+button {
   font-size: clamp(14pt, 16pt, 1vw);
   width: auto;
 }
 
-button:hover{
+button:hover {
   background-color: #d6d6d6;
 }
 
-article{
-  padding-left : 16pt;
-  padding-right : 16pt;
+article {
+  padding-left: 16pt;
+  padding-right: 16pt;
 }
 
 footer {
@@ -42,14 +42,14 @@ main {
 h1 {
   font-size: 24pt;
   color: var(--maintextcolor);
-  
+
   font-weight: bold;
 }
 
 h2 {
   font-size: 22pt;
   margin-bottom: 0pt;
-  
+
   font-weight: bold;
 }
 
@@ -57,11 +57,11 @@ h3 {
   font-size: 18pt;
   margin-bottom: 0pt;
   padding-bottom: 0pt;
-  
+
   font-weight: bold;
 }
 
-h4{
+h4 {
   font-size: 14pt;
   margin-bottom: 0pt;
   padding-bottom: 0pt;
@@ -90,16 +90,16 @@ a {
   font-size: 16pt;
 }
 
-button{
+button {
   border: none;
   padding-top: clamp(1pt, 1vw, 8pt);
   padding-bottom: clamp(1pt, 1vw, 8pt);
-  padding-left:clamp(14pt, 4vw, 48pt);
-  padding-right:clamp(14pt, 4vw, 48pt);
+  padding-left: clamp(14pt, 4vw, 48pt);
+  padding-right: clamp(14pt, 4vw, 48pt);
 }
 
-nav{
-  overflow : auto;
+nav {
+  overflow: auto;
   white-space: nowrap;
 }
 
@@ -127,24 +127,24 @@ iframe {
   border-style: none;
 }
 
-ul{
+ul {
   padding-left: 20pt;
 }
 
 /*min max actualvalue*/
-.searchBar{
+.searchBar {
   width: clamp(150px, 45vw, 600pt);
 }
 
-.searchButton{
-  height:24pt;
+.searchButton {
+  height: 24pt;
 }
 
-.itemProductsContainer{
+.itemProductsContainer {
   text-align: left;
 }
 
-.item{
+.item {
   display: inline-block;
   width: 250pt;
   height: 250pt;
@@ -157,7 +157,7 @@ ul{
   border-radius: 4pt;
 }
 
-.cartItem{
+.cartItem {
   display: inline-block;
   width: 250pt;
   height: 300pt;
@@ -170,19 +170,19 @@ ul{
   border-radius: 4pt;
 }
 
-.itemImage > img{
+.itemImage > img {
   width: 200pt;
-  height: 200pt
+  height: 200pt;
 }
 
-.menucategory{
-  font-size:0;
-  overflow : auto;
+.menucategory {
+  font-size: 0;
+  overflow: auto;
   white-space: nowrap;
   margin-bottom: 16pt;
 }
 
-.homepage{
+.homepage {
   font-weight: bold;
   font-size: clamp(24pt, 6vw, 32pt);
 }
@@ -193,19 +193,214 @@ ul{
   width: auto;
 }
 
-.topright{
-  font-size:0;
+.topright {
+  font-size: 0;
   position: absolute;
   top: 12pt;
   right: 12pt;
 }
 
-@media screen and (max-width: 700px){
-  .itemProductsContainer{
+/* Login CSS Start Here */
+
+#register_error_msg {
+  color: red;
+  padding: 5px 0 5px 0;
+  margin: 5px 0;
+  display: none;
+  font-size: 18px;
+}
+
+#login_error_msg {
+  padding: 5px 0 5px 0;
+  margin: 5px 0;
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+
+.loginForm-popup {
+  display: table;
+}
+.registerForm-popup {
+  display: none;
+}
+
+.loginForm-popup,
+.registerForm-popup {
+  margin: 50px auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.loginForm-container,
+.registerForm-container {
+  max-width: fit-content;
+  padding: 10px;
+  background-color: white;
+}
+
+.loginForm-container input[type="text"],
+.loginForm-container input[type="password"] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.registerForm-container input[type="text"],
+.registerForm-container input[type="password"] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.loginForm-container input[type="text"]:focus,
+.loginForm-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.loginForm-container .btn,
+.registerForm-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.loginForm-container .closeForm,
+.registerForm-container .closeForm {
+  background: none;
+  position: relative;
+  top: -65px;
+  left: 205px;
+  cursor: pointer;
+}
+
+/* Login Css End */
+
+/* Login Css responsive Start Here*/
+
+@media screen and (max-width: 700px) {
+  .loginForm-container input[type="text"],
+  .loginForm-container input[type="password"],
+  .registerForm-container input[type="text"],
+  .registerForm-container input[type="password"],
+  .editForm-container input[type="text"] {
+    width: 275px !important;
+  }
+}
+
+/* Login Css responsive End */
+
+/* User Page css Start here */
+.user-container {
+  max-width: fit-content;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 100px auto;
+}
+
+.title {
+  margin: 10px;
+}
+
+.userTag {
+  margin: 10px;
+}
+
+.tag {
+  color: #7c6e6e;
+  font-size: 18px;
+  background-color: #d2cfcf;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.fa-circle-check {
+  color: #3939dd;
+}
+.userText {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.userEditButton,
+.userEditConfirm {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 10px 0 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.userEditCancel {
+  padding: 16px 20px;
+  margin: 8px 10px 0 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.userSignout {
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+#edit_error_msg {
+  padding: 5px 0 5px 0;
+  margin: 5px 0;
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+
+.editForm-popup {
+  display: none;
+}
+
+.editForm-popup {
+  margin: 50px auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.editForm-container {
+  max-width: fit-content;
+  padding: 10px;
+  background-color: white;
+}
+
+.editForm-container input[type="text"] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+/* User Page css end*/
+
+@media screen and (max-width: 700px) {
+  .itemProductsContainer {
     text-align: center;
   }
 
-  .item{
+  .item {
     display: inline-block;
     width: 70vw;
     height: 70vw;
@@ -213,12 +408,12 @@ ul{
     padding: 15pt;
     text-align: center;
     margin: 8pt;
-  
+
     outline-color: #d6d6d6;
     border-radius: 4pt;
   }
 
-  .cartItem{
+  .cartItem {
     display: inline-block;
     width: 70vw;
     height: 80vw;
@@ -226,12 +421,12 @@ ul{
     padding: 15pt;
     text-align: center;
     margin: 8pt;
-  
+
     outline-color: #d6d6d6;
     border-radius: 4pt;
   }
-  
-  .itemImage > img{
+
+  .itemImage > img {
     width: 50vw;
     height: 50vw;
   }
