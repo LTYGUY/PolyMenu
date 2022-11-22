@@ -43,8 +43,9 @@
             }
             $query .= ",(null,$productID,$userId,'$timeFormat')";
         }
-        $result = mysqli_query($dbc, $query);
     }
+    
+    $result = mysqli_query($dbc, $query);
 
     if ($query == "")
     {
