@@ -294,6 +294,8 @@ ul {
   .loginForm-container input[type="password"],
   .registerForm-container input[type="text"],
   .registerForm-container input[type="password"],
+  .addUserForm-container input[type="text"],
+  .addUserForm-container input[type="password"],
   .editForm-container input[type="text"] {
     width: 275px !important;
   }
@@ -361,7 +363,9 @@ ul {
   opacity: 0.9;
 }
 
-#edit_error_msg {
+#edit_error_msg,
+#adminEdit_error_msg,
+#adminProductEdit_error_msg {
   padding: 5px 0 5px 0;
   margin: 5px 0;
   display: none;
@@ -393,7 +397,104 @@ ul {
   border: none;
   background: #f1f1f1;
 }
+
+.table {
+  overflow: auto;
+}
+
+.table_userPage {
+  border: 1px solid black;
+  overflow: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table_userPage td,
+.table_userPage th {
+  border: 1px solid black;
+}
 /* User Page css end*/
+
+/* Admin css start here */
+
+.adminEditButton,
+.userAddButton,
+.productAddButton {
+  background-color: #04aa6d;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.adminProductDeleteBtn {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+#addUser_error_msg,
+#addProduct_error_msg {
+  padding: 5px 0 5px 0;
+  margin: 5px 0;
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+
+.addUserForm-popup {
+  display: none;
+}
+
+.addUserForm-popup {
+  margin: 50px auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.addUserForm-container {
+  max-width: fit-content;
+  padding: 10px;
+  background-color: white;
+}
+
+.addUserForm-container input[type="text"],
+.addUserForm-container input[type="password"] {
+  width: 500px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.addFormRadio {
+  padding: 0 0 25px 0px;
+}
+
+.itemImage_product > img {
+  width: 50pt;
+  height: 50pt;
+}
+
+.trigButton {
+  background-color: #4b86b1;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 10px 0 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* Admin css end */
 
 @media screen and (max-width: 700px) {
   .itemProductsContainer {
