@@ -42,7 +42,9 @@ function generateTable(productObjects) {
                             <span>$${product.price}</span>
                         </div>
                         <div class='itemTitle'>
-                            <span>${product.itemName}</span>
+                            <div>
+                                ${product.itemName}
+                            </div>
                         </div>
                         <div class='itemAddButton'>
                             <span><button type='button' onclick='addToCart(${product.productID})'>Add to cart</button></span>

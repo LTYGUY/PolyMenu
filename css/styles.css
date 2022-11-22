@@ -210,6 +210,13 @@ ul {
   height: 200pt;
 }
 
+.itemTitle{
+  left:0pt;
+  right:0pt;
+  display:inline-flex;
+  text-align: center;
+}
+
 .itemAddButton{
   position: absolute;
   right: 0pt;
