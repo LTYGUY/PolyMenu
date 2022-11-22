@@ -78,31 +78,177 @@
         </article>
         <article id="login" hidden="hidden">
 
-        <div id="userPage">
+          <div class="editForm-popup" id="editForm">
+            <form class="editForm-container">
+              <h1>Edit Profile</h1>
+              <div>
+                <div id="edit_error_msg"></div>
+              </div>
+              <label for="edit_name"><b>Name</b></label>
+              <input type="text" name="edit_name" id="edit_name" placeholder="Enter your name"/>
+  
+              <label for="edit_email"><b>Email</b></label>
+              <input type="text" name="edit_email" id="edit_email" placeholder="Enter your email"/>
+  
+              <label for="edit_phone"><b>Phone</b></label>
+              <input type="text" name="edit_phone" id="edit_phone" placeholder="Enter your phone"/>
+  
+              <label for="edit_address"><b>Address</b></label>
+              <input type="text" name="edit_address" id="edit_address" placeholder="Enter your address"/>
+  
+              <button type="submit" id="btn_edit" class="userEditConfirm">Confirm</button>
+              <button type='button' onclick='userEditCancel()' class="userEditCancel">Cancel</button>
+  
+            </form>
+          </div>
+
+          <div id="userPage">
+          </div>
+
+          <div class="editForm-popup" id="adminEditForm">
+            <form class="editForm-container">
+              <h1>Edit User</h1>
+              <div>
+                <div id="adminEdit_error_msg"></div>
+              </div>
+              <label for="adminEdit_userId"><b>User Id</b></label>
+              <input type="text" name="adminEdit_userId" id="adminEdit_userId" placeholder="Enter your name" disabled="true"/>
+
+              <label for="adminEdit_name"><b>Name</b></label>
+              <input type="text" name="adminEdit_name" id="adminEdit_name" placeholder="Enter your name"/>
+  
+              <label for="adminEdit_email"><b>Email</b></label>
+              <input type="text" name="adminEdit_email" id="adminEdit_email" placeholder="Enter your email"/>
+  
+              <label for="adminEdit_phone"><b>Phone</b></label>
+              <input type="text" name="adminEdit_phone" id="adminEdit_phone" placeholder="Enter your phone"/>
+  
+              <label for="adminEdit_address"><b>Address</b></label>
+              <input type="text" name="adminEdit_address" id="adminEdit_address" placeholder="Enter your address"/>
+  
+              <button type="submit" id="btn_adminUserEdit" class="adminUserEditConfirm">Confirm</button>
+              <button type='button' onclick='adminUserEditCancel()' class="adminUserEditCancel">Cancel</button>
+  
+            </form>
+          </div>
+
+          <div class="addUserForm-popup" id="addUserForm">
+            <form class="addUserForm-container">
+              <h1>Add User</h1>
+              <div>
+                <div id="addUser_error_msg"></div>
+              </div>
+              <label for="addUser_username">Username</label><br/>
+              <input class="username" type="text" id="addUser_username" name="addUser_username" placeholder="Enter Username" >  
+  
+              <label for="addUser_password"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="addUser_password" class="password"  id="addUser_password" autocomplete="false">
+          
+              <label for="addUserconfirm_password"><b>Confirm Password</b></label>
+              <input type="password" placeholder="Confirm Password" name="addUserconfirm_password" id="addUserconfirm_password" autocomplete="false">
+  
+              <label for="addUser_name"><b>Name</b></label>
+              <input type="text" name="addUser_name" id="addUser_name" placeholder="Enter your name"/>
+  
+              <label for="addUser_email"><b>Email</b></label>
+              <input type="text" name="addUser_email" id="addUser_email" placeholder="Enter your email"/>
+  
+              <label for="addUser_phone"><b>Phone</b></label>
+              <input type="text" name="addUser_phone" id="addUser_phone" placeholder="Enter your phone"/>
+  
+              <label for="addUser_address"><b>Address</b></label>
+              <input type="text" name="addUser_address" id="addUser_address" placeholder="Enter your address"/>
+
+              <div class="addFormRadio">
+              <input type="radio" id="addUser_roleUser" name="addUser_role" value="User" checked="true">
+              <label for="user">User</label><br>
+              <input type="radio" id="addUser_roleAdmin" name="addUser_role" value="Admin">
+              <label for="admin">Admin</label><br>
+              </div>
+  
+              <button type="submit" id="btn_addUser" class="btn">Add</button>
+              <button type='button' onclick='adminUserAddCancel()' class="adminUserEditCancel">Cancel</button>
+            </form>
+          </div>
+
+          <div class="addUserForm-popup" id="addProductForm">
+            <form class="addUserForm-container">
+              <h1>Add Product</h1>
+              <div>
+                <div id="addProduct_error_msg"></div>
+              </div>
+              <label for="addProduct_itemName">Item Name</label><br/>
+              <input class="username" type="text" id="addProduct_itemName" name="addProduct_itemName" placeholder="Enter item name" >  
+  
+              <label for="addProduct_category">Choose category:</label>
+              <select id="addProduct_category" name="addProduct_category">
+              <option value="Main">Main</option>
+              <option value="Appetizer">Appetizer</option>
+              <option value="Side">Side</option>
+              <option value="Drink">Drink</option>
+              <option value="Dessert">Dessert</option>
+              </select>
+              <br><br/>
+              <label for="addProduct_itemCode"><b>Item code</b></label>
+              <input type="text" name="addProduct_itemCode" id="addProduct_itemCode" placeholder="Enter item code"/>
+  
+              <label for="addProduct_price"><b>Price</b></label>
+              <input type="text" name="addProduct_price" id="addProduct_price" placeholder="Enter price"/>
+  
+       
+  
+              <button type="submit" id="btn_addProduct" class="btn">Add</button>
+              <button type='button' onclick='adminProductAddCancel()' class="adminUserEditCancel">Cancel</button>
+            </form>
+          </div>
+
+          <div class="editForm-popup" id="adminEditProductForm">
+            <form class="editForm-container">
+              <h1>Edit Product</h1>
+              <div>
+                <div id="adminProductEdit_error_msg"></div>
+              </div>
+
+              <label for="adminEdit_productId"><b>Product Id</b></label>
+              <input type="text" name="adminEdit_productId" id="adminEdit_productId" disabled="true"/>
+
+              <label for="adminEdit_itemName"><b>Item Name</b></label>
+              <input type="text" name="adminEdit_itemName" id="adminEdit_itemName" placeholder="Enter item name"/>
+
+              <label for="adminEdit_category">Choose category:</label>
+              <select id="adminEdit_category" name="adminEdit_category">
+              <option value="Main">Main</option>
+              <option value="Appetizer">Appetizer</option>
+              <option value="Side">Side</option>
+              <option value="Drink">Drink</option>
+              <option value="Dessert">Dessert</option>
+              </select>
+              <br><br/>
+              <label for="adminEdit_itemCode"><b>Item code</b></label>
+              <input type="text" name="adminEdit_itemCode" id="adminEdit_itemCode" placeholder="Enter item code"/>
+  
+              <label for="adminEdit_price"><b>Price</b></label>
+              <input type="text" name="adminEdit_price" id="adminEdit_price" placeholder="Enter price"/>
+  
+  
+              <button type="submit" id="btn_adminProductEdit" class="adminUserEditConfirm">Confirm</button>
+              <button type="button" onclick='adminProductDelete()' class="adminProductDeleteBtn">Delete</button>
+              <button type='button' onclick='adminProductEditCancel()' class="adminUserEditCancel">Cancel</button>
+  
+            </form>
+          </div>
+
+
+        <div id="orderTable" class="table">
         </div>
-        <div class="editForm-popup" id="editForm">
-          <form class="editForm-container">
-            <h1>Edit Profile</h1>
-            <div>
-              <div id="edit_error_msg"></div>
-            </div>
-            <label for="edit_name"><b>Name</b></label>
-            <input type="text" name="edit_name" id="edit_name" placeholder="Enter your name"/>
 
-            <label for="edit_email"><b>Email</b></label>
-            <input type="text" name="edit_email" id="edit_email" placeholder="Enter your email"/>
-
-            <label for="edit_phone"><b>Phone</b></label>
-            <input type="text" name="edit_phone" id="edit_phone" placeholder="Enter your phone"/>
-
-            <label for="edit_address"><b>Address</b></label>
-            <input type="text" name="edit_address" id="edit_address" placeholder="Enter your address"/>
-
-            <button type="submit" id="btn_edit" class="userEditConfirm">Confirm</button>
-            <button type='button' onclick='userEditCancel()' class="userEditCancel">Cancel</button>
-
-          </form>
+        <div id="userTable" class="table">
         </div>
+
+        <div id="productTable" class="table">
+        </div>
+
+       
         <div class="loginForm-popup" id="loginForm">
           <form class="loginForm-container">
             <h1>Login</h1>
@@ -174,7 +320,10 @@
     <script src="WebClient/uponVisit.js"></script>
     <script src="WebClient/main.js"></script>
     <script src="WebClient/loadProducts.js"></script>
-    <script src="WebClient/editUser.js"></script>
+    <script src="WebClient/Admin/editUser.js"></script>
+    <script src="WebClient/Admin/addUser.js"></script>
+    <script src="WebClient/Admin/getProductList.js"></script>
+    <script src="WebClient/Admin/addProduct.js"></script>
     <script src="WebClient/Auth/register.js"></script>
     <script src="WebClient/Auth/login.js"></script>
     <script src="WebClient/Auth/signout.js"></script>
