@@ -29,6 +29,7 @@ function getUsers() {
           $("#addUserForm").css("display", "none");
           $("#editForm").css("display", "none");
           $("#adminEditProductForm").css("display", "none");
+          $(".registerForm-popup").css("display", "none");
           $("#login_error_msg").css("display", "block");
           $(".loginForm-popup").css("display", "table");
         }
