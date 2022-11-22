@@ -42,8 +42,8 @@
                 continue;
             }
             $query .= ",(null,$productID,$userId,'$timeFormat')";
-            $result = mysqli_query($dbc, $query);
         }
+        $result = mysqli_query($dbc, $query);
     }
 
     if ($query == "")
@@ -53,6 +53,7 @@
     }
 
     if (!$result) {
+        printf($query);
         printf("The query failed\n");
         printf("Error message: %s", $mysqli->error);
         echo 'Order failed!';
