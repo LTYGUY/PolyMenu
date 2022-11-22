@@ -46,7 +46,7 @@ function generateTable(productObjects) {
                                 ${product.itemName}
                             </div>
                         </div>
-                        <div class='itemAddButton'>
+                        <div class='itemBottomPart'>
                             <span><button type='button' onclick='addToCart(${product.productID})'>Add to cart</button></span>
                         </div>
                     </div>`;

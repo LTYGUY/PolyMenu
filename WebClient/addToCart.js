@@ -114,11 +114,13 @@ function generateCartTable(productObjects) {
                         <div class='itemTitle'>
                             <span>${product.itemName}</span>
                         </div>
-                        <div class='itemAddButton'>
-                            <span><button type='button' onclick='addToCart(${product.productID})'>Add</button></span>
-                        </div>
-                        <div class='itemRemoveButton'>
-                            <span><button type='button' onclick='removeFromCart(${product.productID})'>Remove</button></span>
+                        <div class='itemBottomPart'>
+                            <div>
+                                <span><button type='button' onclick='addToCart(${product.productID})'>Add</button></span>
+                            </div>
+                            <div>
+                                <span><button type='button' onclick='removeFromCart(${product.productID})'>Remove</button></span>
+                            </div>
                         </div>
                     </div>`;
   }

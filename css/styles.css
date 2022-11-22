@@ -194,12 +194,14 @@ ul {
 
 .cartItem {
   display: inline-block;
-  width: 250pt;
-  height: 300pt;
+  width: 210pt;
+  height: 320pt;
   outline-style: solid;
   padding: 15pt;
   text-align: center;
   margin: 8pt;
+
+  position: relative;
 
   outline-color: #d6d6d6;
   border-radius: 4pt;
@@ -217,7 +219,7 @@ ul {
   text-align: center;
 }
 
-.itemAddButton{
+.itemBottomPart{
   position: absolute;
   right: 0pt;
   left:0pt;
@@ -550,6 +552,10 @@ ul {
     text-align: center;
   }
 
+  .cartContainer{
+    text-align: center;
+  }
+
   .item {
     display: inline-block;
     width: 50vw;
@@ -565,7 +571,7 @@ ul {
 
   .cartItem {
     display: inline-block;
-    width: 70vw;
+    width: 50vw;
     height: 80vw;
     outline-style: solid;
     padding: 15pt;
