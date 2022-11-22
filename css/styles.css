@@ -179,12 +179,14 @@ ul {
 
 .item {
   display: inline-block;
-  width: 250pt;
-  height: 250pt;
+  width: 210pt;
+  height: 270pt;
   outline-style: solid;
   padding: 15pt;
   text-align: center;
   margin: 8pt;
+
+  position: relative;
 
   outline-color: #d6d6d6;
   border-radius: 4pt;
@@ -206,6 +208,13 @@ ul {
 .itemImage > img {
   width: 200pt;
   height: 200pt;
+}
+
+.itemAddButton{
+  position: absolute;
+  right: 0pt;
+  left:0pt;
+  bottom:5pt;
 }
 
 .menucategory {
@@ -536,7 +545,7 @@ ul {
 
   .item {
     display: inline-block;
-    width: 70vw;
+    width: 50vw;
     height: 70vw;
     outline-style: solid;
     padding: 15pt;
