@@ -1,5 +1,6 @@
 <?php
     include 'connectToDatabase.php';
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') { 
     session_start();
 
     $now = time();
@@ -27,4 +28,5 @@
 
     mysqli_free_result ($result);
     mysqli_close($dbc);
+}
 ?>

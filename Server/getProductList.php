@@ -1,12 +1,15 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include 'connectToDatabase.php';
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') { 
     session_start();
 
-    $userId = $_SESSION['userId'];
+    $now = time();
+    if($now > $_SESSION['expireLogin']) {
+        session_destroy();
+        die('fail');
+    }
 
-    $query = "SELECT Product.productID, Product.itemName, Record.orderdate FROM Record, Product WHERE Record.productID = Product.productID AND Record.userId = '$userId'";
+    $query = "SELECT * FROM Product";
 
     $result = mysqli_query($dbc, $query);
 

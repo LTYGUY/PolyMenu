@@ -7,15 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = file_get_contents( "php://input" );
     $data = json_decode($data);
 
-    session_start();
-    $userId = $_SESSION['userId'];
+    $productID= $data->productID;
+    $itemName= $data->itemName;
+    $category= $data->category;
+    $itemCode= $data->itemCode;
+    $price= $data->price;
 
-    $name = $data->name;
-    $email = $data->email;
-    $address = $data->address;
-    $phone = $data->phone;
-
-    $query = "UPDATE User SET name = '$name', email='$email', phone='$phone', userAddress= '$address' WHERE userId='$userId'";
+    $query = "UPDATE Product SET itemName = '$itemName', category='$category', itemCode='$itemCode', price= '$price' WHERE productID='$productID'";
     $success = mysqli_query($dbc, $query);
 
     if ($success)

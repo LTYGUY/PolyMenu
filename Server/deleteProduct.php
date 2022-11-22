@@ -7,15 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = file_get_contents( "php://input" );
     $data = json_decode($data);
 
-    session_start();
-    $userId = $_SESSION['userId'];
+    $productID= $data->productID;
 
-    $name = $data->name;
-    $email = $data->email;
-    $address = $data->address;
-    $phone = $data->phone;
-
-    $query = "UPDATE User SET name = '$name', email='$email', phone='$phone', userAddress= '$address' WHERE userId='$userId'";
+    $query = "DELETE FROM Product WHERE productID='$productID'";
     $success = mysqli_query($dbc, $query);
 
     if ($success)
