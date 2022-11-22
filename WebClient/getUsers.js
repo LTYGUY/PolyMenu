@@ -25,6 +25,10 @@ function getUsers() {
           $("#userTable").html("");
           $("#productTable").html("");
           $("#login_error_msg").html("");
+          $("#addProductForm").css("display", "none");
+          $("#addUserForm").css("display", "none");
+          $("#editForm").css("display", "none");
+          $("#adminEditProductForm").css("display", "none");
           $("#login_error_msg").css("display", "block");
           $(".loginForm-popup").css("display", "table");
         }
