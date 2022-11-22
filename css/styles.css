@@ -1,5 +1,6 @@
 :root {
   --maintextcolor: #424242;
+  --buttoncolor:#ffffff ;
 }
 
 html {
@@ -12,13 +13,36 @@ ul {
   font-size: 12pt;
 }
 
+.menucategory button{
+  color: #727272;
+  
+  outline-style: none;
+}
+
+.menucategory button:hover{
+  color:#83cbff;
+}
+
 button {
+  background-color: var(--buttoncolor);
   font-size: clamp(14pt, 16pt, 1vw);
   width: auto;
+
+  border-radius: 8pt;
 }
 
 button:hover {
-  background-color: #d6d6d6;
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+button:active{
+  background-color: #c4c4c4;
+}
+
+/*for button active*/
+.active{
+  color:#40afff !important;
 }
 
 article {
@@ -106,7 +130,7 @@ nav {
 nav a {
   font-size: clamp(16pt, 5vw, 24pt);
   display: inline-block;
-  color: rgb(43, 43, 43);
+  color: rgb(134, 134, 134);
   text-decoration: none;
   margin: clamp(0.5vw, 1vw, 4pt);
   outline-style: none;
@@ -116,11 +140,15 @@ nav a {
 }
 
 nav:hover a:hover {
-  color: #575757;
+  color: #3a3a3a;
 }
 
 nav:active a:active {
-  color: rgb(102, 102, 102);
+  color: rgb(37, 37, 37);
+}
+
+.navActive{
+  color: rgb(37, 37, 37);
 }
 
 iframe {

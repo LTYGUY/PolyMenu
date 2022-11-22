@@ -51,8 +51,4 @@ function generateTable(productObjects) {
   }
 
   displayproducts.innerHTML = combinedString;
-
-  afterGeneratingTable();
 }
-
-function afterGeneratingTable() {}
