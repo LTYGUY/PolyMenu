@@ -13,6 +13,11 @@ ul {
   font-size: 12pt;
 }
 
+/*min max actualvalue*/
+.menucategory{
+  height: clamp(40px, 10vw, 40pt);
+}
+
 .menucategory button{
   color: #727272;
   
