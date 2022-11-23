@@ -2,7 +2,7 @@ const displayproducts = document.getElementById("displayproducts");
 const searchBar = document.getElementById("searchBar");
 let previousCategory = "";
 
-getProducts("Main");
+getProducts("All");
 
 function getProducts(category) {
   let xhr = new XMLHttpRequest();
