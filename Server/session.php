@@ -1,5 +1,5 @@
 <?php
-//ref:https://www.php.net/manual/en/function.session-create-id.php
+header("Access-Control-Allow-Origin: http://localhost:8000");
 
 function my_session_start(){
 session.start();

@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: http://localhost:8000");
     $ROLE_USER = 0;
 
     include 'connectToDatabase.php';

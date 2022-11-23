@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: http://localhost:8000");
 include 'connectToDatabase.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { 

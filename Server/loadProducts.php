@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: http://localhost:8000");
 $getproducts = $_REQUEST["getproducts"];
 
 include 'connectToDatabase.php';

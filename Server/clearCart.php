@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: http://localhost:8000");
 $cookie_name = "cart_productIDs";
 
 $cookie_value;

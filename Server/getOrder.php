@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: http://localhost:8000");
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include 'connectToDatabase.php';
     session_start();
