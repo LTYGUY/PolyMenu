@@ -5,6 +5,8 @@ $('#helpmenu > button').click(function(){
   
 $('#helpmenu > button:first').addClass('active');
 
+displayHelpPage('help-register');
+
 function displayHelpPage(id){
     closeAllPages();
     $(`#${id}`).show();
