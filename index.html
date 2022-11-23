@@ -74,7 +74,121 @@
           </p>
         </article>
         <article id="page3" hidden="hidden">
+          <div class="helpmenu" id="helpmenu">
+            <button type="button" onclick="displayHelpPage('help-register')">Register</button>
+            <button type="button" onclick="displayHelpPage('help-login')">Login</button>
+            <button type="button" onclick="displayHelpPage('help-edit')">Edit Account</button>
+            <button type="button" onclick="displayHelpPage('help-order')">Order</button>
+          </div>
 
+          <div class="helpbackground" id="helpPages">
+            <div id="help-register">
+              <h4>
+                First press 'Sign up'.
+              </h4>
+              <img src="images/help_register1.jpg" alt="help_register1" class="autoresizeimg"/>
+              <h4>
+                Read the given fields and provide your information. Once done, press 'Register'.
+              </h4>
+              <img src="images/help_register2.jpg" alt="help_register2" class="autoresizeimg"/>
+              <h4>
+                You will be prompted 'Registration success' at the top if you successfully registered. 
+                If so, you can click 'Sign in' to go to the login page.
+              </h4>
+              <img src="images/help_register3.jpg" alt="help_register3" class="autoresizeimg"/>
+            </div>
+            <div id="help-login">
+              <h4>
+                First go to the login page by pressing the 'Login' button on top of the page. 
+                Then key in your login details press the green 'Login' button.
+              </h4>
+              <img src="images/help_login1.jpg" alt="help_login1" class="autoresizeimg"/>
+            </div>
+            <div id="help-edit">
+              <h4>
+                After you successfully login, you can then press 'Edit'.
+              </h4>
+              <img src="images/help_edit1.jpg" alt="help_edit1" class="autoresizeimg"/>
+              <h4>
+                You can then edit your account information.
+              </h4>
+              <img src="images/help_edit2.jpg" alt="help_edit2" class="autoresizeimg"/>
+              <h4>
+                After you are done with editing, press 'Confirm' to save.
+              </h4>
+              <img src="images/help_edit3.jpg" alt="help_edit3" class="autoresizeimg"/>
+              <h4>
+                You should be brought back to the account page, and you should see your account information updated!
+              </h4>
+              <img src="images/help_edit4.jpg" alt="help_edit4" class="autoresizeimg"/>
+            </div>
+            <div id="help-order">
+              <h4>
+                You can only submit your order if you are logged in!
+              </h4>
+              <br/>
+              <h4>
+                Press 'PolyMenu' to access the order page.
+              </h4>
+              <img src="images/help_order1.jpg" alt="help_order1" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                This is the order page. You can choose categories of foods, and also key in letters to search for them.
+              </h4>
+              <br/>
+              <img src="images/help_order2.jpg" alt="help_order2" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                For this example, you can press 'Side' to access Sides category of foods.
+              </h4>
+              <img src="images/help_order3.jpg" alt="help_order3" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                For this example, you can key in 'soup' into the search bar, and it will return you food names that contains 'soup'.
+              </h4>
+              <img src="images/help_order4.jpg" alt="help_order4" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                You can then press 'Add to cart' to add to cart, it should feedback on the top main button 'Cart'.
+              </h4>
+              <img src="images/help_order5.jpg" alt="help_order5" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                You can add as many as you like, for this example, i add 3 Mushroom Soup in to cart.
+                You can then click on the top button 'Cart' to go to the cart page.
+              </h4>
+              <img src="images/help_order6.jpg" alt="help_order6" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                In the cart page, you can choose to Add or Remove the foods you have added to cart. In this example I will remove 1 Mushroom Soup.
+              </h4>
+              <img src="images/help_order7.jpg" alt="help_order7" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                You can then press 'Clear Cart' to clear your cart, or 'Submit Order' to submit your order. In this example, I will submit order.
+              </h4>
+              <img src="images/help_order8.jpg" alt="help_order8" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                Once submitted successfully, it will inform you and clear your cart. You can then go to your account page to check out your order history.
+              </h4>
+              <img src="images/help_order9.jpg" alt="help_order9" class="autoresizeimg"/>
+              <br/>
+              <br/>
+              <h4>
+                You can see your order history at the most bottom part of your account information page.
+              </h4>
+              <img src="images/help_order10.jpg" alt="help_order10" class="autoresizeimg"/>
+            </div>
+          </div>
         </article>
         <article id="login" hidden="hidden">
 
@@ -315,6 +429,7 @@
           </div>
         </article>
     </div>
+    <script src="WebClient/helpPage.js"></script>
     <script src="WebClient/navButtons.js"></script>
     <script src="WebClient/menuCategoryButtons.js"></script>
     <script src="WebClient/getUsers.js"></script>

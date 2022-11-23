@@ -13,9 +13,29 @@ ul {
   font-size: 12pt;
 }
 
+.helpmenu{
+  height: clamp(40px, 10vw, 40pt);
+  font-size: 0;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 16pt;
+}
+.helpmenu button{
+  color: #727272;
+  
+  outline-style: none;
+}
+.helpmenu button:hover{
+  color:#83cbff;
+}
+
 /*min max actualvalue*/
 .menucategory{
   height: clamp(40px, 10vw, 40pt);
+  font-size: 0;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 16pt;
 }
 
 .menucategory button{
@@ -93,8 +113,9 @@ h3 {
 h4 {
   font-size: 14pt;
   margin-bottom: 0pt;
-  padding-bottom: 0pt;
   font-weight: bold;
+  margin-top:0;
+  padding: 2pt;
 }
 
 section {
@@ -164,6 +185,11 @@ ul {
   padding-left: 20pt;
 }
 
+img{
+  outline-style: solid;
+  outline-color: #dddddd;
+}
+
 /*min max actualvalue*/
 .searchBar {
   width: clamp(150px, 45vw, 600pt);
@@ -226,13 +252,6 @@ ul {
   bottom:5pt;
 }
 
-.menucategory {
-  font-size: 0;
-  overflow: auto;
-  white-space: nowrap;
-  margin-bottom: 16pt;
-}
-
 .homepage {
   font-weight: bold;
   font-size: clamp(24pt, 6vw, 32pt);
@@ -242,6 +261,13 @@ ul {
   max-width: 100%;
   height: auto;
   width: auto;
+}
+
+.helpbackground{
+  background-color: rgb(252, 252, 252);
+  outline-style: solid;
+  outline-color: #858585;
+  padding: 4pt;
 }
 
 .topright {
